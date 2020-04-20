@@ -12,6 +12,9 @@ public class WordSpawner : MonoBehaviour
 
   public WordDisplay SpawnWord()
     {
+        //Create a vector2 position for the word to spawn in (ideally above the character)
+
+
         GameObject wordobj = Instantiate(wordPrefab, wordCanvas);
         WordDisplay wordDisplay = wordobj.GetComponent<WordDisplay>();
 

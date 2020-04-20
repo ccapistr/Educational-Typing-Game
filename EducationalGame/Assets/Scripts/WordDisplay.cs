@@ -14,6 +14,15 @@ public class WordDisplay : MonoBehaviour
     }
 
 
+    public void RemoveLetter()
+    {
+        text.text = text.text.Remove(0, 1); //removes a single letter
+        text.color = Color.red; //when removing a letter, the word being focused on is red.
+    }
 
+    public void RemoveWord()
+    {
+        Destroy(gameObject);
+    }
 
 }
