@@ -5,13 +5,7 @@ using UnityEngine;
 public class WordManager : MonoBehaviour
 {
 
-   public List <Word> words;
-
-    public WordSpawner wordSpawner;
-   
-
-    private bool hasActiveWord;
-    private Word ActiveWord;
+   public List<Word> words;
 
     private void Start()
     {
@@ -20,53 +14,8 @@ public class WordManager : MonoBehaviour
         AddWord();
     }
 
-    public void AddWord() // Method for pulling Random Word 
+    public void AddWord()
     {
-
-
-        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
-        Debug.Log(word.word);
-
-        words.Add(word);
+        Word word = new Word("");
     }
-
-    public void TypeLetter(char letter)
-    {
-        if (hasActiveWord)
-        {
-            if (ActiveWord.GetNextLetter() == letter)
-            {
-                ActiveWord.TypeLetter();
-
-
-            }
-            // check if letter was next 
-            //Remove it from the word
-
-        }
-        else
-        {
-            foreach (Word word in words)
-            {
-                if (word.GetNextLetter() == letter)
-                {
-                    ActiveWord = word;
-                    hasActiveWord = true;
-                    word.TypeLetter();
-                    break;
-                }
-            }
-        }
-
-        if (hasActiveWord && ActiveWord.WordTyped())
-        {
-            hasActiveWord = false;
-            words.Remove(ActiveWord);
-        }
-
-
-    }
-
-
-
 }
