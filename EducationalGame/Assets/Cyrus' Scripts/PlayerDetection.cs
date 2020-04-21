@@ -48,5 +48,6 @@ public class PlayerDetection : MonoBehaviour
         playerTyping = false;
         allWordsTyped = true;
         player.GetComponent<CharacterScript>().enabled = true;
+        wordManager.playerFinishedTyping = false;
     }
 }
