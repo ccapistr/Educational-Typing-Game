@@ -13,11 +13,14 @@ public class WordManager : MonoBehaviour
     private bool hasActiveWord;
     private Word ActiveWord;
 
+    public PlayerDetection player;
+
     private void Start()
     {
         AddWord();
-        AddWord();
-        AddWord();
+        //AddWord();
+        //AddWord();
+        player = GetComponent<PlayerDetection>();
     }
 
     public void AddWord() // Method for pulling Random Word 
@@ -62,6 +65,8 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(ActiveWord);
+
+            //When word has been removed, set player movement active again
         }
 
 
