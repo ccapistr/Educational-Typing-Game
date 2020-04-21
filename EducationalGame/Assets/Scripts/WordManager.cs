@@ -17,10 +17,9 @@ public class WordManager : MonoBehaviour
 
     private void Start()
     {
-        AddWord();
         //AddWord();
         //AddWord();
-        player = GetComponent<PlayerDetection>();
+        //AddWord();
     }
 
     public void AddWord() // Method for pulling Random Word 
@@ -67,6 +66,7 @@ public class WordManager : MonoBehaviour
             words.Remove(ActiveWord);
 
             //When word has been removed, set player movement active again
+            player.FinishedTyping();
         }
 
 
