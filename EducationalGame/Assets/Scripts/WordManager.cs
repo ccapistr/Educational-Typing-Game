@@ -13,11 +13,13 @@ public class WordManager : MonoBehaviour
     private bool hasActiveWord;
     private Word ActiveWord;
 
+    //public PlayerDetection player;
+    public bool playerFinishedTyping;
     private void Start()
     {
-        AddWord();
-        AddWord();
-        AddWord();
+        //AddWord();
+        //AddWord();
+        //AddWord();
     }
 
     public void AddWord() // Method for pulling Random Word 
@@ -62,6 +64,10 @@ public class WordManager : MonoBehaviour
         {
             hasActiveWord = false;
             words.Remove(ActiveWord);
+
+            //When word has been removed, set player movement active again
+            //player.FinishedTyping();
+            playerFinishedTyping = true; 
         }
 
 
